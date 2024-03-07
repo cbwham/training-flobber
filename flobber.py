@@ -8,8 +8,8 @@ from cloudpathlib import CloudPath
 parser = argparse.ArgumentParser(
                     prog='flobber',
                     description='Upload a file to a Blob Storage',
-                    epilog='Development, take care :)') # TODO
-parser.add_argument('--filename', '-f', default='root/index.md')
+                    epilog='https://github.com/cbwham/training-flobber') # TODO
+parser.add_argument('--filename', '-f', default='root/index.html')
 parser.add_argument('--uri', '-u', default='az://cbwtrainingbackup/') 
 args = parser.parse_args()
 
