@@ -21,7 +21,7 @@ filename = args.filename
 cloud_uri = args.uri
 
 # open local file by name in the argument passed on the cli
-local_file = open(filename, 'r', encoding="utf-8")
+local_file = open(filename, 'rb')
 print(f'local file: {filename}')
 # actually read file
 local_text = local_file.read()
@@ -36,7 +36,7 @@ cloud_file = root_dir / filename
 if(cloud_file.exists()):
     print(f'cloud file: {cloud_file} exists')
     # get content of cloud file
-    cloud_text = cloud_file.read_text()
+    cloud_text = cloud_file.read_bytes()
     # compare local and cloud text
     if(local_text == cloud_text):
         print(f'local file: {filename} is identical to {cloud_file}')
@@ -45,7 +45,7 @@ if(cloud_file.exists()):
 
 # TODO: stupid logic, give this another try later
 print(f'writing: {cloud_file}')
-cloud_file.write_text(local_text)
+cloud_file.write_bytes(local_text)
 
 # # DEBUG: list all markdown files in container
 # print(list(root_dir.glob('**/*.md')))
