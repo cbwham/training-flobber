@@ -16,3 +16,17 @@ az storage account create --name trainingbackup --resource-group training-01_gro
 pip install -U -r requirements.txt
 ```
 
+## Edit Markdown
+
+Example file is located in `root/index.md`.
+
+## Let Flobber do the job
+
+```shell
+./flobber.py
+local file: root/index.md
+cloud root directory: az://cbwtrainingbackup/
+writing: az://cbwtrainingbackup/root/index.md
+```
+
+## Work in progress ...
